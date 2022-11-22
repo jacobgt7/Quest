@@ -92,6 +92,9 @@ namespace Quest
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
 
+                Prize prize = new Prize("You got a Dazzling Ruby");
+                prize.ShowPrize(theAdventurer);
+
                 Console.Write("Try again?");
                 playAgain = Console.ReadLine().ToLower();
 
