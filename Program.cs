@@ -37,6 +37,8 @@ namespace Quest
     ",
                     4, 20
                 );
+                Challenge numberOfLicks = new Challenge("How many licks to get to the center of a Tootsie Pop?", 3, 20);
+                Challenge bottlesOfBeer = new Challenge("100 bottles of beer on the wall, take one down, pass it around, how many bottles of beer on the wall?", 99, 15);
 
                 // "Awesomeness" is like our Adventurer's current "score"
                 // A higher Awesomeness is better
@@ -68,11 +70,24 @@ namespace Quest
                     theAnswer,
                     whatSecond,
                     guessRandom,
-                    favoriteBeatle
+                    favoriteBeatle,
+                    numberOfLicks,
+                    bottlesOfBeer
                 };
 
+                List<Challenge> randomChallenges = new List<Challenge>();
+                while (randomChallenges.Count < 5)
+                {
+                    int randomInt = new Random().Next(challenges.Count);
+                    Challenge randomChallenge = challenges[randomInt];
+                    if (!randomChallenges.Contains(randomChallenge))
+                    {
+                        randomChallenges.Add(randomChallenge);
+                    }
+                }
+
                 // Loop through all the challenges and subject the Adventurer to them
-                foreach (Challenge challenge in challenges)
+                foreach (Challenge challenge in randomChallenges)
                 {
                     challenge.RunChallenge(theAdventurer);
                 }
