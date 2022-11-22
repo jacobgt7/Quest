@@ -51,9 +51,12 @@ namespace Quest
                 robe.Colors = new List<string>() { "blue", "purple", "gold" };
                 robe.Length = 65;
 
+                Hat hat = new Hat();
+                hat.ShininessLevel = 8;
+
                 // Make a new "Adventurer" object using the "Adventurer" class
                 Console.Write("What is your name, adventurer?");
-                Adventurer theAdventurer = new Adventurer(Console.ReadLine(), robe);
+                Adventurer theAdventurer = new Adventurer(Console.ReadLine(), robe, hat);
 
                 Console.WriteLine(theAdventurer.GetDescription());
 
